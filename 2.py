@@ -1,16 +1,13 @@
 def f(x):
-    return 2*x**2 + 5*x + 2.5
+    return x**2 - 4*x + 6
 
+x0 = 0
+t = 1
 
-x0 = 0      # начальная точка
-t = 0.5     # шаг
-
-# шаг 1
 f0 = f(x0)
 f_minus = f(x0 - t)
 f_plus = f(x0 + t)
 
-# проверка
 if f_minus >= f0 <= f_plus:
     a, b = x0 - t, x0 + t
 
@@ -19,7 +16,6 @@ elif f_minus <= f0 >= f_plus:
     exit()
 
 else:
-    # определяем направление
     if f_plus < f0:
         delta = t
         x_prev = x0
